@@ -35,8 +35,9 @@ class quiz_flow:
             self.q_current+=1
 
     def previous_question(self):
-        if(self.q_current==0):
+        if(self.q_current==1):
             print("There are no questions before this.")
+            return
         self.q_current-=1
 
     def move_to_question_num(self,num):
