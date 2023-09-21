@@ -159,6 +159,6 @@ while(True):
                 elif(confirm=='n'):
                     break
                 else:
-                    print("Chutiya hai kya be dikhta nhi y yeh n dabana hai GANDU SALA\n Life me ek he chiz daba skta hai wo bhi dhang se nhi !!")
+                    print("Enter a valid input")
         case 9:
             wiz.submit()
