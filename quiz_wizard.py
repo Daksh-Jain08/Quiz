@@ -1,7 +1,6 @@
 import random
 import question_bank
 import class_quiz
-#interface-----------------------------------------
 
 choice=input("1. Press any key to start quiz \n2. press e to exit\n")
 if(choice=='e'):
