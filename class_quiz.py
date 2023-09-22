@@ -74,7 +74,7 @@ class quiz_flow:
             else:
                 self.score-=1
                 self.q_incorrect+=1
-        print("The quiz has been submitted.\nNumber of questions attempted: " ,wiz.q_attempted, "\nNumber of questions answered correctly: ", wiz.q_correct, "\nNumber of questions answered incorrectly:", wiz.q_incorrect)
+        print("The quiz has been submitted.\nNumber of questions attempted: " ,self.q_attempted, "\nNumber of questions answered correctly: ", self.q_correct, "\nNumber of questions answered incorrectly:", self.q_incorrect)
         print("Total Score: ", self.score)
         exit()
     
