@@ -65,7 +65,7 @@ while(True):
         case 6:
             print("Enter the Number You want to move")
             x=int(input())
-            wiz.move_to_question_num
+            wiz.move_to_question_num(x)
         case 7:
             wiz.clear_response()
         case 8:
