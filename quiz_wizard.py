@@ -12,7 +12,7 @@ else:
 wiz=class_quiz.quiz_flow()
 
 print("Welcome to the quiz!")
-wiz.q_num=int(input("Enter the number of questions in the quiz: "))
+wiz.q_num=int(input("Enter the number of questions you want in the quiz(max 12): "))
 
 randomlist = []
 i=1
