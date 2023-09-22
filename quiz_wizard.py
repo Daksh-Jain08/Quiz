@@ -1,87 +1,6 @@
 import random
 import question_bank
-
-
-class quiz_flow:
-    l=[]
-    
-    def __init__(self):
-        self.q_num=0
-        self.q_attempted=0
-        self.q_remaining=self.q_num
-        self.q_current=1
-        self.q_id=0
-        self.score=0
-        self.q_correct=0
-        self.q_incorrect=0
-        self.q_marked_for_review=[]
-
-    def set_responce(self,response):
-        self.l[self.q_current-1][1]=response
-        self.q_attempted+=1
-
-    def mark_for_review(self):
-        self.l[self.q_current-1][3]=1
-        self.q_marked_for_review.append(self.q_marked_for_review)
-        print("This question has been marked for review.")
-
-    def show_marked_for_review(self):
-        print(self.q_marked_for_review)
-
-    def next_question(self):
-        if(self.q_current==self.q_num):
-            self.submit()
-        else:
-            self.q_current+=1
-
-    def previous_question(self):
-        if(self.q_current==1):
-            print("There are no questions before this.")
-            return
-        self.q_current-=1
-
-    def move_to_question_num(self,num):
-        self.q_current=num
-
-    def is_attempted(self,que):
-        if(self.l[que][1]!=0):
-            return True
-        else:
-            return False
-
-    def get_num_attempted(self):
-        print(self.q_attempted)
-
-    def get_num_remaining(self):
-        self.q_remaining= self.q_num - self.q_attempted
-
-    def clear_response(self):
-        self.l[self.q_current-1][0]=0
-        self.q_attempted-=1
-
-    def clear_all_response(self):
-        for i in range(self.q_num):
-            self.l[i][1]=0
-        self.q_attempted=0
-    
-    def unmark_for_review(self):
-        self.l[self.q_current-1][3]=0
-        print("The question has been marked for review.")
-
-    def submit(self):
-        for i in range(self.q_num):
-            if(self.l[i][1]==0):
-                pass
-            elif(self.l[i][1]==self.l[i][2]):
-                self.score+=2
-                self.q_correct+=1
-            else:
-                self.score-=1
-                self.q_incorrect+=1
-        print("The quiz has been submitted.\nNumber of questions attempted: " ,wiz.q_attempted, "\nNumber of questions answered correctly: ", wiz.q_correct, "\nNumber of questions answered incorrectly:", wiz.q_incorrect)
-        print("Total Score: ", self.score)
-        exit()
-    
+import class_quiz
 #interface-----------------------------------------
 
 choice=input("1. Press any key to start quiz \n2. press e to exit\n")
@@ -91,7 +10,7 @@ if(choice=='e'):
 else:
     pass
 
-wiz=quiz_flow()
+wiz=class_quiz.quiz_flow()
 
 print("Welcome to the quiz!")
 wiz.q_num=int(input("Enter the number of questions in the quiz: "))
@@ -111,7 +30,7 @@ for i in randomlist:
     wiz.l.append([i,0,0,0])
     wiz.l[j][2]=question_bank.question_list[i]["answer"]
     j+=1
-print(wiz.l)
+
 while(True):
     print("\npress:\n1. Give Response \n2. Mark For Review\n3. Unmark for review \n4. Next Question \n5. Previous question \n6. Move to Question Number \n7. Clear Response \n8. Clear all Response\n9. Show questions marked for review\n10. Submit")
     print("\n\t\tQuestion Number: ",wiz.q_current)
@@ -147,7 +66,7 @@ while(True):
         case 6:
             print("Enter the Number You want to move")
             x=int(input())
-            wiz.move_to_question_num(
+            wiz.move_to_question_num
         case 7:
             wiz.clear_response()
         case 8:
